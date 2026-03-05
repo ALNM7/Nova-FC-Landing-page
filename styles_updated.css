@@ -1,6 +1,5 @@
-/* ============================================================
-   RESET & BASE
-============================================================ */
+/* RESET & BASE */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -52,7 +51,7 @@ em  { font-style: normal; }
 .section   { padding: 96px 0; }
 .section--alt { background: var(--surface); }
 
-/* Shared heading pattern */
+/* heading  */
 .section__head { text-align: center; margin-bottom: 56px; }
 .section__h2 {
   font-family: var(--font-d);
@@ -67,9 +66,7 @@ em  { font-style: normal; }
   color: var(--blue-lt); margin-bottom: 10px; display: block;
 }
 
-/* ============================================================
-   BUTTONS
-============================================================ */
+/* BUTTONS */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-b); font-weight: 600;
@@ -88,9 +85,7 @@ em  { font-style: normal; }
 }
 .btn--ghost:hover { border-color: var(--blue-lt); color: var(--blue-lt); }
 
-/* ============================================================
-   ANIMATIONS
-============================================================ */
+/* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -114,9 +109,7 @@ em  { font-style: normal; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ============================================================
-   NAV
-============================================================ */
+/* Nav */
 .nav {
   position: fixed; inset: 0 0 auto 0; z-index: 100;
   height: var(--nav); border-bottom: 1px solid transparent;
@@ -152,9 +145,7 @@ em  { font-style: normal; }
 .nav__mLink:hover { color: var(--white); }
 .nav__mCta { margin-top: 18px; align-self: flex-start; }
 
-/* ============================================================
-   HERO
-============================================================ */
+/* Hero */
 .hero {
   min-height: 100vh; display: flex; flex-direction: column;
   position: relative; overflow: hidden; padding-top: var(--nav);
@@ -173,7 +164,7 @@ em  { font-style: normal; }
   gap: 48px;
 }
 
-/* Left text block */
+/* Texto de la izq */
 .hero__text { max-width: 640px; }
 .hero__eyebrow {
   display: flex; align-items: center; gap: 10px;
@@ -207,7 +198,7 @@ em  { font-style: normal; }
   margin-top: 32px; animation: fadeUp .7s .4s both;
 }
 
-/* Stats strip at bottom of hero */
+/* strip abajo del hero */
 .hero__stats {
   display: flex; align-items: center; gap: 0;
   padding: 24px 32px;
@@ -232,9 +223,7 @@ em  { font-style: normal; }
 }
 .hero__down:hover { border-color: var(--blue-lt); color: var(--blue-lt); }
 
-/* ============================================================
-   MARQUEE
-============================================================ */
+/* marquee */
 .strip { background: var(--blue); overflow: hidden; padding: 12px 0; }
 .strip__track {
   display: flex; align-items: center; gap: 0;
@@ -247,9 +236,7 @@ em  { font-style: normal; }
 }
 .strip__dot { color: rgba(255,255,255,.4); font-size: 10px; flex-shrink: 0; }
 
-/* ============================================================
-   ABOUT — intro + valores + vm
-============================================================ */
+/* acerca de  */
 .intro { text-align: center; max-width: 680px; margin: 0 auto 56px; }
 .intro__text { font-size: 17px; color: var(--muted); line-height: 1.8; margin-top: 16px; }
 
@@ -304,16 +291,13 @@ em  { font-style: normal; }
 }
 .vm__text { font-size: 19px; color: var(--muted); line-height: 1.8; }
 
-/* ============================================================
-   COACH
-============================================================ */
+/* coach */
+
 .coach {
   display: grid;
-  /* Bigger, more balanced columns on desktop */
-  grid-template-columns: minmax(240px, 320px) 1fr minmax(260px, 320px);
-  gap: 56px;
+  grid-template-columns: 300px 1fr minmax(260px, 300px);
+  gap: 40px;
   align-items: center;
-
   padding: 48px;
   border-radius: var(--rl);
   border: 1px solid var(--border);
@@ -321,32 +305,27 @@ em  { font-style: normal; }
   margin-bottom: 20px;
 }
 
-/* Bigger photo card + responsive width */
 .coach__img-wrap {
   position: relative;
-  width: clamp(240px, 22vw, 340px);
-  flex-shrink: 0;
+  width: 100%;
   border-radius: var(--rl);
   overflow: hidden;
-
-  /* Taller feel like a profile card */
-  aspect-ratio: 4 / 5;
-  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
 }
 
 .coach__img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 20%;
 }
 
 .coach__img-label {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: rgba(7,9,15,.90);
-  backdrop-filter: blur(10px);
-  padding: 12px 14px;
+  background: linear-gradient(to top, rgba(7,9,15,.95) 0%, rgba(7,9,15,.55) 60%, transparent 100%);
+  padding: 32px 18px 16px;
 }
 .coach__img-label strong {
   font-size: 18px;
@@ -354,26 +333,32 @@ em  { font-style: normal; }
   display: block;
 }
 .coach__img-label span {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--blue-lt);
 }
 
-/* Text */
+/* Texto */
+.coach__info {
+  padding-top: 0;
+}
 .coach__h2 {
   font-family: var(--font-d);
-  font-size: clamp(34px, 4.2vw, 54px);
+  font-size: clamp(30px, 3.6vw, 48px);
   line-height: 1.02;
   color: var(--white);
   margin: 8px 0 14px;
 }
 .coach__bio {
-  font-size: 19px;
+  font-size: 17px;
   color: var(--muted);
   line-height: 1.8;
 }
 
-/* Right column: keep compact but readable */
-.coach__certs { max-width: 320px; }
+/* columna derecha */
+.coach__certs {
+  max-width: 100%;
+  padding-top: 0;
+}
 .coach__certs-label {
   font-family: var(--font-m);
   font-size: 10px;
@@ -385,9 +370,9 @@ em  { font-style: normal; }
 
 .pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .pills span {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 5px 11px;
   border-radius: 999px;
   border: 1px solid var(--border2);
   color: var(--muted);
@@ -410,9 +395,7 @@ em  { font-style: normal; }
 .area strong { font-size: 20px; font-weight: 700; color: var(--white); display: block; margin-bottom: 6px; }
 .area p { font-size: 15px; color: var(--muted); line-height: 1.6; }
 
-/* ============================================================
-   CATEGORÍAS
-============================================================ */
+/*categorias */
 .cats { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
 
 .cat {
@@ -455,7 +438,7 @@ em  { font-style: normal; }
 }
 .cat__btn:hover { background: var(--c, var(--blue-lt)); color: var(--black); }
 
-/* Stats row below categories */
+
 .prog-stats {
   display: flex; align-items: center;
   padding: 28px 40px; border-radius: var(--r);
@@ -467,9 +450,7 @@ em  { font-style: normal; }
 .prog-stat__l { font-size: 13px; color: var(--muted); }
 .prog-stat__sep { width: 1px; height: 48px; background: var(--border); }
 
-/* ============================================================
-   COSTOS + EQUIPACIÓN
-============================================================ */
+/* costos y equipacion */
 .invest {
   display: grid; grid-template-columns: 1fr 1px 1fr;
   gap: 0;
@@ -484,7 +465,7 @@ em  { font-style: normal; }
   border-bottom: 1px solid var(--border);
 }
 
-/* Price rows */
+/* Precio */
 .prow {
   display: flex; align-items: center; justify-content: space-between;
   gap: 16px; padding: 20px 24px;
@@ -522,7 +503,7 @@ em  { font-style: normal; }
 .inc-grid span::first-letter { color: var(--blue-lt); }
 .fineprint { font-size: 12px; color: var(--muted); margin-top: 16px; opacity: .6; }
 
-/* Equipment rows */
+/* Equipamento */
 .erow {
   padding: 20px; border-radius: var(--r);
   border: 1px solid var(--border); background: var(--black);
@@ -544,9 +525,7 @@ em  { font-style: normal; }
 .erow__list li { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
 .erow__list li::before { content:'–'; color: var(--border2); flex-shrink: 0; }
 
-/* ============================================================
-   UBICACIÓN
-============================================================ */
+/* ubicacion */
 .loc {
   display: grid; grid-template-columns: 340px 1fr;
   gap: 28px; align-items: stretch;
@@ -571,9 +550,7 @@ em  { font-style: normal; }
   border: 1px solid var(--border); min-height: 460px;
 }
 
-/* ============================================================
-   REQUISITOS — acordeón
-============================================================ */
+/*requisitos */
 .accord { display: flex; flex-direction: column; gap: 8px; margin-bottom: 40px; }
 
 .accord__item {
@@ -636,9 +613,7 @@ em  { font-style: normal; }
   color: var(--muted); font-weight: 500;
 }
 
-/* ============================================================
-   FOOTER
-============================================================ */
+/*footer */
 .footer { background: var(--black); border-top: 1px solid var(--border); padding: 64px 0 0; }
 .footer__inner {
   display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr;
@@ -666,37 +641,17 @@ em  { font-style: normal; }
 .footer__bottom-inner strong { color: var(--blue-lt); }
 
 
-/* ============================================================
-   TYPO — slightly larger overall
-============================================================ */
+/* mas grande*/
 body { font-size: 18px; }
 .section__desc { font-size: 18px; }
 .intro__text { font-size: clamp(18px, 2vw, 22px); }
 .nav__link { font-size: 18px; }
 .footer__inner a, .footer__inner p { font-size: 15px; }
 
-/* ============================================================
-   COACH — make 'Formación' more compact, content larger
-============================================================ */
-.coach {
-  grid-template-columns: 200px 1fr 240px;
-}
-.coach__h2 {
-  font-size: clamp(34px, 4vw, 50px);
-}
-.coach__bio { font-size: 19px; }
 
-.coach__certs { max-width: 240px; }
-.coach__certs-label { font-size: 9px; }
-.pills { gap: 6px; }
-.pills span {
-  font-size: 13px;
-  padding: 4px 10px;
-}
 
-/* ============================================================
-   PROGRAMS banner (extra image element)
-============================================================ */
+
+/* programas */
 .programs__banner {
   position: relative;
   border-radius: var(--rl);
@@ -740,35 +695,24 @@ body { font-size: 18px; }
   color: var(--white);
 }
 
-/* ============================================================
-   LOCATION — highlight Contact card when coming from "Inscribirse"
-============================================================ */
-@keyframes contactGlow {
-  0%   { box-shadow: 0 0 0 0 rgba(37,99,235,0); transform: translateY(0); }
-  15%  { box-shadow: 0 0 0 6px rgba(37,99,235,.20); }
-  55%  { box-shadow: 0 0 0 12px rgba(37,99,235,.08); }
-  100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); transform: translateY(0); }
-}
-.loc__item.is-highlight {
-  border-color: var(--blue-lt);
-  background: linear-gradient(135deg, var(--blue-faint), var(--surface));
-  animation: contactGlow 1.2s ease-out both;
-}
-.loc__item.is-highlight .loc__item-title { color: var(--blue-lt); }
-.loc__item:focus { outline: 3px solid rgba(59,130,246,.55); outline-offset: 3px; }
 
-/* ============================================================
-   RESPONSIVE tweaks for bigger type
-============================================================ */
+/* responsivo */
 @media (max-width: 960px) {
   body { font-size: 17px; }
-  .coach { grid-template-columns: 1fr; }
-  .coach__certs { max-width: 100%; }
-}
+  .coach {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    gap: 24px;
+  }
+  .coach__img-wrap {
+    width: min(100%, 360px);
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+  }
+  .coach__info { width: 100%; }
+  .coach__certs { max-width: 100%; width: 100%; }
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
+
 @media (max-width: 1024px) {
   .invest { grid-template-columns: 1fr; }
   .invest__sep { display: none; }
@@ -777,10 +721,7 @@ body { font-size: 18px; }
 }
 
 @media (max-width: 960px) {
-  .coach { grid-template-columns: 1fr; padding: 28px; gap: 24px; justify-items: center; }
-  .coach__img-wrap { width: min(100%, 420px); margin: 0 auto; }
   .coach__info { width: 100%; }
-  .coach__certs { max-width: 100%; width: 100%; }
   .values { grid-template-columns: 1fr 1fr; }
   .val { border-right: none; border-bottom: 1px solid var(--border); }
   .val:nth-child(odd) { border-right: 1px solid var(--border); }
@@ -819,4 +760,5 @@ body { font-size: 18px; }
 }
 @media (min-width: 641px) {
   .nav__mobile { display: none !important; }
+}
 }
